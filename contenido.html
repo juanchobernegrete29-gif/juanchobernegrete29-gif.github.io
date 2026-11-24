@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OVA completo | Comparative &amp; Superlative World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&amp;family=Nunito:wght@500;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/ova.css">
+  <script src="js/ova.js" defer></script>
+</head>
+<body>
+<header>
+  <b>🦖 Comparative &amp; Superlative World</b>
+  <nav aria-label="Secciones"><a href="#warm">1 Calentamiento</a><a href="#lab">2 Laboratorio</a><a href="#challenges">3 Retos</a><a href="#quiz">4 Quiz final</a></nav>
+  <div id="stars" aria-live="polite">⭐ 0 / 12</div>
+  <div id="bar"><i></i></div>
+</header>
+
+<main>
+<section class="warm-hero page on" id="warm">
+  <img class="warm-planet" src="img/planet.svg" alt="Planeta naranja con anillos turquesa" width="240" height="200">
+  <img class="warm-giraffe" src="img/giraffe.svg" alt="Jirafa, el animal terrestre más alto" width="160" height="240">
+  <div class="mascot"><span>🦖</span><p>¡Hola! Soy Rex. ¡Vamos a descubrir a los campeones del mundo!</p></div>
+  <h1>Who is <span class="a">faster</span>?<br>Which is <span class="p">hotter</span>?</h1>
+  <p class="lead">Hoy eres un Detective de Récords. Haz clic en el campeón de cada duelo y mira cómo el inglés compara las cosas.</p>
+  <div class="duel" id="duel"></div>
+  <p class="say" id="say" aria-live="polite"></p>
+  <p><a class="btn" href="#lab">¿Listo para descubrir el secreto? ▼ Empezar</a></p>
+</section>
+
+<section id="lab">
+  <h2>Laboratorio de gramática</h2>
+  <p class="lead">Mira el video y luego usa la guía de la derecha. Los retos se abren cuando termines el video.</p>
+  <div class="lab">
+    <div>
+      <div class="video" id="video" role="region" aria-label="Reproductor de video (prototipo)">
+        <div class="scene" id="scene">🐆🐢</div>
+        <div class="formula" id="formula"></div><div class="vo" id="vo">Aquí irá el video (2:40). Pulsa ▶ para ver el guion escena por escena.</div>
+        <div class="ctl"><button id="play" aria-label="Reproducir">▶</button><div><i id="prog"></i></div><span id="time">0:00</span><button id="cc" aria-pressed="true">CC</button><button id="voice" aria-pressed="false">🔊 Voz</button></div>
+      </div>
+      <div class="chap" id="chap"></div>
+    </div>
+    <div>
+      <div class="tabs" role="tablist" id="gtabs"></div>
+      <div class="panel" id="g0"><div class="tabwrap"><table>
+        <tr><th>Tipo</th><th>Adjetivo</th><th>+ than</th><th>the …</th></tr>
+        <tr><td class="s">Corto</td><td>tall</td><td>taller</td><td>the tallest</td></tr>
+        <tr><td class="s">Termina en -e</td><td>large</td><td>larger</td><td>the largest</td></tr>
+        <tr><td class="s">CVC: se duplica</td><td>big, hot</td><td>bigger, hotter</td><td>the biggest, the hottest</td></tr>
+        <tr><td class="s">Termina en -y</td><td>heavy</td><td>heavier</td><td>the heaviest</td></tr>
+        <tr><td class="l">Largo (2+)</td><td>dangerous</td><td>more dangerous</td><td>the most dangerous</td></tr>
+        <tr><td class="i">Irregular</td><td>good<br>bad<br>far</td><td>better<br>worse<br>farther</td><td>the best<br>the worst<br>the farthest</td></tr>
+      </table></div></div>
+      <div class="panel" id="g1" hidden>
+        <p>The cheetah is <span class="s">faster</span> than the lion.<br>→ It is <span class="s">the fastest</span> land animal.</p>
+        <p>Jupiter is <span class="s">bigger</span> than Earth.<br>→ It is <span class="s">the biggest</span> planet.</p>
+        <p>Saturn is <span class="l">more beautiful</span> than Mars.<br>→ It is <span class="l">the most beautiful</span> planet.</p>
+        <p>Comparativo = 2 cosas + <b>than</b>. Superlativo = un grupo + <b>the</b>.</p></div>
+      <div class="panel" id="g2" hidden>
+        <p>❌ more taller → ✅ taller</p><p>❌ the most fast → ✅ the fastest</p><p>❌ bigger that → ✅ bigger than</p><p>❌ more good → ✅ better</p></div>
+    </div>
+  </div>
+  <p><button id="skip">Saltar video (modo docente)</button></p>
+  <div class="pager"><button data-go="warm">◀ Volver al calentamiento</button><button class="nx" data-go="challenges">Siguiente: Retos ▶</button></div>
+</section>
+
+<section id="challenges" class="page lock">
+  <h2>Retos</h2>
+  <p class="lead" id="lockmsg">🔒 Termina el video en el Laboratorio (o usa “Saltar video” allí) para abrir los retos.</p>
+  <div class="tabs" role="tablist" id="ctabs"></div>
+
+  <div class="panel" id="c0">
+    <h3>A · Clasificador de adjetivos</h3>
+    <p>Haz clic en una tarjeta y luego en la caja donde va.</p>
+    <div class="cards" id="cardsA"></div>
+    <div class="boxes"><div class="box s2" id="bs" tabindex="0"><b class="s">CORTOS: -er / -est</b><br></div><div class="box l2" id="bl" tabindex="0"><b class="l">LARGOS: more / most</b><br></div></div>
+    <div class="fb" id="fbA" aria-live="polite"></div>
+  </div>
+
+  <div class="panel" id="c1" hidden>
+    <h3>B · Laboratorio de récords</h3>
+    <div id="rowsB"></div>
+    <p><button id="chkB">Revisar respuestas</button></p>
+    <div class="fb" id="fbB" aria-live="polite"></div>
+  </div>
+
+  <div class="panel" id="c2" hidden>
+    <h3>C · Detective de errores</h3>
+    <p>Haz clic en la palabra incorrecta y luego elige la corrección.</p>
+    <div id="sentC"></div>
+    <div class="fb" id="fbC" aria-live="polite"></div>
+  </div>
+  <div class="pager"><button data-go="lab">◀ Volver al laboratorio</button><button class="nx" data-go="quiz">Siguiente: Quiz final ▶</button></div>
+</section>
+
+<section id="quiz" class="page lock">
+  <h2>Quiz final</h2>
+  <p class="lead">8 preguntas. Se abre después del video.</p>
+  <div class="panel q" id="qbox"></div>
+  <div class="pager"><button data-go="challenges">◀ Volver a los retos</button><button data-go="warm">Empezar de nuevo ↺</button></div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <p>Autores: Samuel Castillo, Lorena Bohorquez y Juan Berrio · Ficha/Grupo: 0000000 · 2026</p>
+</footer>
+</body>
+</html>
